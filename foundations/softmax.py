@@ -1,9 +1,6 @@
 import numpy as np
 from numpy.typing import NDArray
 
-'''
-softmax(z)
-'''
 
 class Solution:
 
@@ -11,7 +8,7 @@ class Solution:
         # z is a 1D NumPy array of logits
         # Hint: subtract max(z) for numerical stability before computing exp
         # return np.round(your_answer, 4)
-
-        z = z - np.max(z) # normalize
-        exp_z = np.exp(z)
-        return np.round(exp_z / np.sum(exp_z), 4)
+        
+        shifted = z - np.max(z)
+        exps = np.exp(shifted)
+        return np.round(exps / np.sum(exps), 4)
