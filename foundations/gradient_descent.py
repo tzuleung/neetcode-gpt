@@ -7,6 +7,7 @@ class Solution:
         ans = init 
 
         for _ in range(iterations):
+            # x_new = x_old - alpha * Derivative
             ans = ans - learning_rate * (2*ans)
         
         return round(ans, 5)
